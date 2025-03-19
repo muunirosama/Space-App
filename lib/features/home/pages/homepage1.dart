@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_app/models/planets.dart';
 import '../../../cores/constants/app_assets.dart';
 import '../../../cores/themes/app_colors.dart';
 import '../../planetdetails/pages/earthdetails.dart';
@@ -22,44 +23,34 @@ class HomePage1 extends StatelessWidget {
                 Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 250),
-                        child: Image.asset(
-                              AppAssets.earth,
-                              width: 300,
-                              height: 400,
-                            ),
-                      ),
+                      Spacer(),
+                      const SizedBox(height: 150),
+                       Image.asset(
+                             AppAssets.earth,
+                           ),
                             const SizedBox(height: 16),
-
-                            const Spacer(),
-                            Expanded(
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 16),
                               child: Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: AppColors.primaryColor,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  CircleAvatar(
+                                    backgroundColor: AppColors.primaryColor,
                               child: IconButton(
                                 onPressed: () {},
                                 icon: const Icon(Icons.arrow_back, color: Colors.white),
                               ),
-                            ),
-
-                          const Flexible(
-                            child: Align(alignment: Alignment.center,
-                                  child: Text("Earth",
-                                    style: TextStyle(
-                                  color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 24,
-                                      ),
                                   ),
-                            ),
-                          ),
-                          const SizedBox(height: 32),
+                                  const Text("Earth",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 24,
+                              ),
+                                  ),
 
-                          CircleAvatar(
-                            backgroundColor: AppColors.primaryColor,
+                                  CircleAvatar(
+                                    backgroundColor: AppColors.primaryColor,
                               child: IconButton(
                                 onPressed: () {
                                   Navigator.of(context).push(
@@ -70,8 +61,8 @@ class HomePage1 extends StatelessWidget {
                                 },
                                 icon: const Icon(Icons.arrow_forward, color: Colors.white),
                               ),
-                            ),
-                        ],
+                                  ),
+                                ],
                               ),
                             ),
                         const Spacer(),
@@ -107,7 +98,7 @@ class HomePage1 extends StatelessWidget {
                                         ),
                                       ),
                                        Icon(
-                                            Icons.arrow_forward, color: AppColors.white
+                                            Icons.arrow_forward, color: AppColors.white,size: 32,
                                        )
                                     ],
                                   ),
@@ -116,7 +107,6 @@ class HomePage1 extends StatelessWidget {
                           ),
                           ]
                         ),
-
               ],
             ),
 
