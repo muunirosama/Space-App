@@ -1,0 +1,2 @@
+C:/Users/VEGA Laptop/StudioProjects/space_app/android/app/.cxx/Debug/6q4r2z70/x86/CMakeFiles/edit_cache.dir
+C:/Users/VEGA Laptop/StudioProjects/space_app/android/app/.cxx/Debug/6q4r2z70/x86/CMakeFiles/rebuild_cache.dir

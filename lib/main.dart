@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:space_app/models/planets.dart';
 import 'features/home/pages/homepage1.dart';
-import 'features/home/pages/homepage2.dart';
 import 'features/login/pages/login page.dart';
-import 'features/planetdetails/pages/earthdetails.dart';
-import 'features/planetdetails/pages/mercurydetails.dart';
+import 'features/planetdetails/pages/planetDetails.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,15 +24,14 @@ class MyApp extends StatelessWidget {
         HomePage1.routeName:(BuildContext context){
           return const HomePage1();
         },
-        HomePage2.routeName:(BuildContext context){
-          return const HomePage2();
+
+        PlanetDetails.routeName:(BuildContext context){
+          var planet= ModalRoute.of(context)!.settings.arguments as PlanetModel;
+          return  PlanetDetails(
+            planet:planet,
+          );
         },
-        EarthDetails.routeName:(BuildContext context){
-          return const EarthDetails();
-        },
-        Mercurydetails.routeName:(BuildContext context){
-          return const Mercurydetails();
-        },
+
       },
     );
   }
