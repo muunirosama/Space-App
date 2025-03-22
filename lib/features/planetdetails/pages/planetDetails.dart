@@ -1,5 +1,7 @@
+import 'dart:math';
+
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:model_viewer_plus/model_viewer_plus.dart';
 import 'package:space_app/models/planets.dart';
 
 class PlanetDetails extends StatelessWidget {
@@ -15,12 +17,12 @@ class PlanetDetails extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.transparent,
-          leading: BackButton(
+          leading: const BackButton(
             color: Colors.white,
           ),
           title:  Text(
             planet.name,
-            style: TextStyle(
+            style: const TextStyle(
            color: Colors.white,
            fontSize: 24,
            fontWeight: FontWeight.bold
@@ -33,32 +35,34 @@ class PlanetDetails extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 10,),
+                    const SizedBox(height: 10,),
                     Text(
                             planet.title,
-                            style: TextStyle(
+                            style: const TextStyle(
                             color: Colors.white,
                               fontSize: 24,
                               fontWeight: FontWeight.bold
                           ),
                           ),
-                    SizedBox(height: 12,),
-                    Align(
-                        alignment: Alignment.center,
-                        child: Image.asset(
-                            planet.image
-                        ),
+                    const SizedBox(height: 12,),
+
+                Align(
+                  alignment: Alignment.center,
+                  child: ZoomIn(
+                    duration: const Duration(seconds: 5),
+                    animate: true,
+                    child: Spin(
+                      duration: const Duration(seconds: 5),
+                      infinite: true,
+                      child: Image.asset(
+                        planet.image,
+                        width: 400,
+                        height: 400,
                       ),
-                  //   Expanded(
-                  //     child: ModelViewer(
-                  //       src: planet.model,
-                  //       alt: 'A 3D model of an astronaut',
-                  //       ar: true, autoRotate: true,
-                  //       disableZoom: true,
-                  //       iosSrc: planet.model,
-                  //     ),
-                  // ),
-                        SizedBox(
+                    ),
+                  ),
+                ),
+                        const SizedBox(
                           child: Text(
                             "About",
                           style: TextStyle(
@@ -72,7 +76,7 @@ class PlanetDetails extends StatelessWidget {
                          SizedBox(
                           child: Text(
                             planet.about,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white70,
                               fontSize: 16,
                             ),
@@ -82,7 +86,7 @@ class PlanetDetails extends StatelessWidget {
                         SizedBox(
                           child: Text(
                             "distanceFromSun: ${planet.distanceFromSun}",
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold
@@ -93,7 +97,7 @@ class PlanetDetails extends StatelessWidget {
                          SizedBox(
                           child: Text(
                             "lengthOfDay: ${planet.lengthOfDay}" ,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 16,
                                 fontWeight: FontWeight.bold
@@ -104,7 +108,7 @@ class PlanetDetails extends StatelessWidget {
                          SizedBox(
                           child: Text(
                             "orbitalPeriod: ${planet.orbitalPeriod}" ,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 16,
                                 fontWeight: FontWeight.bold
@@ -115,7 +119,7 @@ class PlanetDetails extends StatelessWidget {
                          SizedBox(
                           child: Text(
                             "radius: ${planet.radius}" ,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 16,
                               fontWeight: FontWeight.bold
@@ -126,7 +130,7 @@ class PlanetDetails extends StatelessWidget {
                          SizedBox(
                           child: Text(
                             "mass:${planet.mass }",
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 16,
                                 fontWeight: FontWeight.bold
@@ -137,7 +141,7 @@ class PlanetDetails extends StatelessWidget {
                          SizedBox(
                           child: Text(
                            "gravity:${planet.gravity}",
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 16,
                                 fontWeight: FontWeight.bold
@@ -148,7 +152,7 @@ class PlanetDetails extends StatelessWidget {
                          SizedBox(
                           child: Text(
                             "surfaceArea:${planet.surfaceArea}",
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 16,
                                 fontWeight: FontWeight.bold

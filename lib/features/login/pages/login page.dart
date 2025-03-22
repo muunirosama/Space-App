@@ -25,6 +25,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
+
             Container(
               alignment: Alignment.bottomCenter,
               child: SizedBox(
@@ -54,20 +55,9 @@ class LoginPage extends StatelessWidget {
                           fontSize: 20
                         ),
                       ),
-                      Icon(Icons.arrow_forward, color: Colors.white,)
+                      Icon(Icons.arrow_forward, color: Colors.white,size: 24,)
                     ],
                   ),
-                  // Positioned(
-                  //   left: 16,
-                  //   top: MediaQuery.of(context).size.height / 2,
-                  //   child: IconButton(
-                  //     onPressed: () {
-                  //       // Handle left arrow action
-                  //     },
-                  //     icon: const Icon(Icons.arrow_back, color: Colors.white),
-                  //   ),
-                  // ),
-
                 ),
               ),
             ),
